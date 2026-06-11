@@ -1,0 +1,12 @@
+<library path="free_orbit_ortho_view_plugin">
+  <!-- View controller that keeps Orbit controls but renders with an orthographic camera. -->
+  <class
+    name="free_orbit_ortho_view_plugin/FreeOrbitOrtho"
+    type="free_orbit_ortho_view_plugin::FreeOrbitOrthoViewController"
+    base_class_type="rviz_common::ViewController"
+  >
+    <description>
+      Free-rotating orthographic orbit view. Mouse controls match RViz Orbit; Distance controls orthographic scale.
+    </description>
+  </class>
+</library>

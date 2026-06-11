@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <!-- ROS package identity for the RViz view-controller plugin package. -->
+  <name>free_orbit_ortho_view_plugin</name>
+  <version>0.1.0</version>
+  <description>RViz2 plugin that provides a free orbit orthographic view controller.</description>
+  <maintainer email="yeseung.kim.88@gmail.com">yskim</maintainer>
+  <license>MIT</license>
+
+  <!-- ament_cmake is required for C++ RViz plugins. -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Pluginlib registers the view controller for RViz discovery. -->
+  <depend>pluginlib</depend>
+
+  <!-- RViz and Ogre dependencies used by the custom view controller. -->
+  <depend>rviz_common</depend>
+  <depend>rviz_default_plugins</depend>
+  <depend>rviz_ogre_vendor</depend>
+  <depend>rviz_rendering</depend>
+
+  <!-- Export the plugin description so RViz can discover this package. -->
+  <export>
+    <build_type>ament_cmake</build_type>
+    <rviz_common plugin="${prefix}/plugins_description.xml"/>
+  </export>
+</package>
