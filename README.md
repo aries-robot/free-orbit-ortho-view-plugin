@@ -8,7 +8,7 @@ This package keeps the normal RViz Orbit mouse controls, but renders the camera 
 
 The package name is `free_orbit_ortho_view_plugin`.
 
-This is a generic ROS 2 plugin-style name because it describes the RViz feature instead of a robot, sensor, or workspace. The RViz plugin class is registered as:
+The RViz plugin class is registered as:
 
 ```text
 free_orbit_ortho_view_plugin/FreeOrbitOrtho
