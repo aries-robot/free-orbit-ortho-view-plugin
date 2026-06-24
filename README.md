@@ -16,20 +16,38 @@ free_orbit_ortho_view_plugin/FreeOrbitOrtho
 
 This package is intended for ROS 2 Humble.
 
+## Clone Into A Workspace
+
+Create a ROS 2 workspace and clone this package into its `src` directory.
+
+If you already have a ROS 2 workspace, use that workspace's `src` directory instead of `/path/to/ortho_ws/src`.
+
+```bash
+mkdir -p /path/to/ortho_ws/src
+cd /path/to/ortho_ws/src
+git clone https://github.com/aries-robot/free-orbit-ortho-view-plugin.git
+```
+
+The package source should be located here after cloning:
+
+```text
+/path/to/ortho_ws/src/free-orbit-ortho-view-plugin
+```
+
 ## Build
 
 Install or source ROS 2 Humble first.
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd /path/to/free_orbit_ortho_view_plugin
-colcon build --packages-select free_orbit_ortho_view_plugin
+cd /path/to/ortho_ws
+colcon build --symlink-install --packages-select free_orbit_ortho_view_plugin
 ```
 
 Source the built workspace.
 
 ```bash
-source /path/to/free_orbit_ortho_view_plugin/install/setup.bash
+source /path/to/ortho_ws/install/setup.bash
 ```
 
 ## Run In RViz
@@ -38,7 +56,7 @@ Start RViz from a terminal where the plugin workspace has been sourced.
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /path/to/free_orbit_ortho_view_plugin/install/setup.bash
+source /path/to/ortho_ws/install/setup.bash
 rviz2
 ```
 
@@ -69,14 +87,14 @@ Install package dependencies.
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd /path/to/free_orbit_ortho_view_plugin
+cd /path/to/ortho_ws
 rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
 ```
 
 Build a local Debian package.
 
 ```bash
-cd /path/to/free_orbit_ortho_view_plugin/src/free_orbit_ortho_view_plugin
+cd /path/to/ortho_ws/src/free-orbit-ortho-view-plugin
 bloom-generate rosdebian --ros-distro humble
 fakeroot debian/rules binary
 ```
@@ -86,7 +104,7 @@ The generated `.deb` file is created in the parent directory of the package sour
 Install the generated package.
 
 ```bash
-cd /path/to/free_orbit_ortho_view_plugin/src
+cd /path/to/ortho_ws/src
 sudo apt install ./ros-humble-free-orbit-ortho-view-plugin_*.deb
 ```
 
